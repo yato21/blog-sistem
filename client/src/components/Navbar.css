@@ -1,0 +1,140 @@
+.navbar {
+  background: var(--old-paper);
+  border-bottom: 2px double var(--old-ink);
+  padding: 10px 0;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-logo {
+  font-family: "Old English Text MT", "UnifrakturMaguntia", var(--primary-font);
+  font-size: 2.5rem;
+  color: var(--old-ink);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin: 0;
+}
+
+.navbar-date {
+  font-family: var(--secondary-font);
+  font-style: italic;
+  color: var(--muted-text);
+  font-size: 0.8rem;
+  border-left: 1.5px solid var(--separator-color);
+  padding-left: 20px;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  margin: 0;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.navbar-links a {
+  font-family: var(--primary-font);
+  color: var(--old-ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.navbar-links a::after {
+  content: '•';
+  position: absolute;
+  right: -18px;
+  color: var(--muted-text);
+  opacity: 0.8;
+}
+
+.navbar-links a:last-child::after {
+  display: none;
+}
+
+.btn-create {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.btn-create:hover {
+  background: none;
+  color: var(--old-ink);
+}
+
+.btn-logout {
+  border: none;
+  background: none;
+  font-family: var(--primary-font);
+  color: var(--old-ink);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .navbar-logo-section {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .navbar-logo {
+    font-size: 2rem;
+  }
+
+  .navbar-date {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .navbar-links {
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar-links a::after {
+    display: none;
+  }
+} 

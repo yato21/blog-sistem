@@ -1,0 +1,757 @@
+:root {
+  /* Готическая цветовая палитра */
+  --gothic-bg: #f4e9d9;
+  --gothic-accent: #4a0404;
+  --gothic-text: #1a1a1a;
+  --gothic-gold: #85714d;
+  --gothic-shadow: rgba(44, 24, 16, 0.1);
+  --gothic-border: rgba(44, 24, 16, 0.15);
+}
+
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  width: 100%;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  position: relative;
+  background: none;
+  border-bottom: none;
+}
+
+/* Общий стиль для разделителя секций */
+.section-divider {
+  position: relative;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    var(--gothic-accent),
+    var(--gothic-accent) calc(50% - 15px),
+    transparent calc(50% - 15px),
+    transparent calc(50% + 15px),
+    var(--gothic-accent) calc(50% + 15px)
+  );
+  opacity: 0.2;
+}
+
+.section-divider::after {
+  content: '☩';
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.3);
+  background: #fff;
+  padding: 0 10px;
+  opacity: 0.6;
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  animation: fadeInUp 0.8s ease-out;
+  font-family: var(--serif-font);
+  letter-spacing: normal;
+  font-weight: 700;
+  color: var(--gothic-text);
+  text-shadow: 2px 2px 0 rgba(74, 4, 4, 0.1);
+}
+
+.hero-section p {
+  font-size: 1.4rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-style: italic;
+  animation: fadeInUp 0.8s ease-out 0.2s;
+  animation-fill-mode: both;
+  column-count: 2;
+  column-gap: 40px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.home-actions {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin: 30px auto;
+  max-width: 500px;
+  animation: fadeInUp 0.8s ease-out 0.4s;
+  animation-fill-mode: both;
+}
+
+.home-actions .btn {
+  flex: 1;
+  min-width: 160px;
+  max-width: 200px;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px auto;
+  max-width: 500px;
+}
+
+.cta-actions .btn {
+  flex: 1;
+  min-width: 160px;
+  max-width: 200px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 30px 0;
+  padding: 20px 0;
+  position: relative;
+  composes: section-divider;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 25px 20px;
+  border: none;
+  background: none;
+  animation: scaleIn 0.6s ease-out;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: none;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid var(--gothic-accent);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.feature-card::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid var(--gothic-gold);
+  pointer-events: none;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: none;
+  border-color: var(--gothic-gold);
+}
+
+.feature-card i {
+  font-size: 2.5rem;
+  color: var(--gothic-accent);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+.feature-card:hover i {
+  transform: scale(1.1);
+  color: var(--gothic-text);
+}
+
+.feature-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  color: #4a4a4b;
+  line-height: 1.6;
+}
+
+.recent-posts {
+  padding: 60px 0;
+  border-top: 2px solid var(--border-color);
+}
+
+.recent-posts h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.recent-posts .btn {
+  min-width: 200px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.recent-posts .btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.recent-posts .btn:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+.recent-posts-action {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 30px 0;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-actions,
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px auto;
+  }
+
+  .home-actions .btn,
+  .cta-actions .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .recent-posts .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Адаптивные стили для домашней страницы */
+@media (max-width: 1024px) {
+  .hero-section h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+  }
+
+  .features-grid {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 40px 0;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+
+  .home-actions,
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px auto;
+  }
+
+  .home-actions .btn,
+  .cta-actions .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 25px;
+  }
+
+  .recent-posts .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 30px 0;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+
+  .feature-card h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Добавляем базовые анимации */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Применяем анимации к элементам */
+.hero-section h1 {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-section p {
+  animation: fadeInUp 0.8s ease-out 0.2s;
+  animation-fill-mode: both;
+}
+
+.home-actions {
+  animation: fadeInUp 0.8s ease-out 0.4s;
+  animation-fill-mode: both;
+}
+
+.feature-card {
+  animation: scaleIn 0.6s ease-out;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover i {
+  transform: scale(1.1);
+  color: var(--gothic-text);
+}
+
+.recent-posts h2 {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.recent-posts .post-card {
+  animation: fadeInUp 0.8s ease-out;
+  animation-delay: calc(var(--index) * 0.2s);
+  animation-fill-mode: both;
+}
+
+/* Анимация для кнопок */
+.btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Анимация для иконок в feature cards */
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.feature-card i {
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+/* Стили для карточек постов */
+.post-card {
+  opacity: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Статистика */
+.stats-section {
+  padding: 15px 0;
+  margin: 10px 0;
+  position: relative;
+  composes: section-divider;
+  background: none;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  padding: 5px 0;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 15px;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  z-index: 1;
+  border-right: 1px solid var(--gothic-border);
+}
+
+.stat-card:last-child {
+  border-right: none;
+}
+
+.stat-card i {
+  font-size: 2.5rem;
+  color: var(--gothic-accent);
+  margin-bottom: 15px;
+}
+
+.stat-card h3 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--gothic-text);
+  font-family: var(--serif-font);
+}
+
+.stat-card p {
+  font-size: 1.2rem;
+  color: var(--muted-text);
+}
+
+/* Преимущества */
+.why-us-section {
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  composes: section-divider;
+  background: none;
+}
+
+.why-us-section h2 {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 30px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 15px;
+}
+
+.benefit-card {
+  padding: 20px;
+  background: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  animation: scaleIn 0.6s ease-out;
+  border: none;
+  box-shadow: none;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: none;
+  border-color: var(--gothic-gold);
+}
+
+.benefit-card i {
+  font-size: 2rem;
+  color: var(--gothic-accent);
+  margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--gothic-text);
+}
+
+.benefit-card p {
+  color: var(--muted-text);
+  line-height: 1.6;
+}
+
+/* CTA секция */
+.cta-section {
+  text-align: center;
+  padding: 20px 0;
+  margin: 10px 0;
+  position: relative;
+  composes: section-divider;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--old-ink);
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--muted-text);
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card h3 {
+    font-size: 2rem;
+  }
+
+  .why-us-section h2,
+  .cta-section h2 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  .stat-card {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .stat-card:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Горизонтальный разделитель */
+.section-separator {
+  position: relative;
+  height: 30px;
+  margin: 10px 0;
+}
+
+.section-separator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    var(--gothic-accent),
+    var(--gothic-accent) calc(50% - 15px),
+    transparent calc(50% - 15px),
+    transparent calc(50% + 15px),
+    var(--gothic-accent) calc(50% + 15px)
+  );
+  opacity: 0.2;
+}
+
+.section-separator::after {
+  content: '☩';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: var(--gothic-accent);
+  background: #fff;
+  padding: 0 15px;
+  opacity: 0.6;
+}
+
+/* Добавляем разделители в HTML структуру */
+.hero-section + .section-separator,
+.stats-section + .section-separator,
+.features-grid + .section-separator,
+.why-us-section + .section-separator {
+  display: block;
+}
+
+/* Убираем лишние отступы у секций */
+.hero-section,
+.stats-section,
+.features-grid,
+.why-us-section,
+.cta-section {
+  margin: 0;
+  padding: 15px 0;
+}
+
+/* Оставляем только стили для позиционирования групп кнопок */
+.home-actions {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin: 30px auto;
+  max-width: 500px;
+  animation: fadeInUp 0.8s ease-out 0.4s;
+  animation-fill-mode: both;
+}
+
+.home-actions .btn {
+  flex: 1;
+  min-width: 160px;
+  max-width: 200px;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px auto;
+  max-width: 500px;
+}
+
+.cta-actions .btn {
+  flex: 1;
+  min-width: 160px;
+  max-width: 200px;
+}
+
+/* Адаптивность для групп кнопок */
+@media (max-width: 768px) {
+  .home-actions,
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px auto;
+  }
+
+  .home-actions .btn,
+  .cta-actions .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+} 

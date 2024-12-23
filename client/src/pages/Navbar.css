@@ -1,0 +1,22 @@
+- .btn-create,
+- .btn-logout {
+-   border: none;
+-   background: none;
+-   font-family: var(--primary-font);
+-   color: var(--old-ink);
+-   cursor: pointer;
+-   text-transform: uppercase;
+-   letter-spacing: 1px;
+-   font-size: 0.9rem;
+-   font-weight: 700;
+- }
+- 
+- .btn-create:hover {
+-   background: none;
+-   color: var(--old-ink);
+- }
+
+/* Оставляем только позиционирование */
+.navbar-links .btn {
+  margin-left: 20px;
+} 

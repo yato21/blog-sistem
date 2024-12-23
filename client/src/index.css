@@ -1,0 +1,147 @@
+:root {
+  --primary-font: 'Playfair Display', serif;
+  --secondary-font: 'Noto Serif', 'Georgia', serif;
+  --text-color: #1a1a1a;
+  --background-color: #ffffff;
+  --border-color: #cccccc;
+  --accent-color: #1a1a1a;
+  --old-paper: #ffffff;
+  --old-ink: #1a1a1a;
+  --separator-color: #cccccc;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --hover-color: #f0f0f0;
+  --muted-text: #666666;
+  --icon-size: 1.1rem;
+  --icon-opacity: 0.9;
+  --icon-color: var(--gothic-accent);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--secondary-font);
+  background-color: #fafafa;
+  color: var(--old-ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--primary-font);
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: var(--old-ink);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  background: var(--old-paper);
+  box-shadow: 0 0 30px var(--shadow-color);
+}
+
+.form-group .btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn:disabled,
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.separator {
+  border: none;
+  border-top: 2px solid var(--separator-color);
+  margin: 2rem 0;
+  position: relative;
+}
+
+.separator::before {
+  content: "✦";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--old-paper);
+  padding: 0 10px;
+  color: var(--old-ink);
+}
+
+/* Общие стили для мета-информации постов */
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 15px;
+  color: var(--muted-text);
+}
+
+.post-meta span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+/* Общие стили для иконок */
+.post-meta i[class*="fa-"],
+.post-stats i[class*="fa-"],
+.search-box i[class*="fa-"],
+.popular-post-meta i[class*="fa-"] {
+  font-size: var(--icon-size);
+  color: var(--icon-color);
+  opacity: var(--icon-opacity);
+}
+
+/* Стили для статистики */
+.post-stats {
+  display: flex;
+  gap: 25px;
+}
+
+.post-stats span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Адаптивность для мета-информации */
+@media (max-width: 768px) {
+  .post-meta {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Специфичные стили для иконок в разных контекстах */
+.create-post-container .post-meta {
+  justify-content: center;
+  font-family: var(--secondary-font);
+}
+
+.loading i[class*="fa-"],
+.error i[class*="fa-"],
+.no-posts i[class*="fa-"] {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}

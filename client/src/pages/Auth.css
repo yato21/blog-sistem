@@ -1,0 +1,86 @@
+.auth-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  background: var(--old-paper);
+  border: 1.5px solid var(--separator-color);
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.auth-form h2 {
+  font-family: var(--primary-font);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-family: var(--primary-font);
+  font-weight: 700;
+  color: var(--old-ink);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid var(--separator-color);
+  background: var(--old-paper);
+  font-family: var(--secondary-font);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--old-ink);
+}
+
+.error-message {
+  color: var(--accent-color);
+  text-align: center;
+  margin-bottom: 15px;
+  font-family: var(--secondary-font);
+  font-weight: 500;
+}
+
+.auth-form button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Адаптивные стили для форм */
+@media (max-width: 768px) {
+  .auth-container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    margin: 10px auto;
+    padding: 10px;
+  }
+
+  .form-group input {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+} 

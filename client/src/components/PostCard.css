@@ -1,0 +1,199 @@
+.post-card {
+  background: var(--old-paper);
+  border: 1.5px solid var(--separator-color);
+  padding: 30px;
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.post-title {
+  font-family: var(--primary-font);
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  border-bottom: 1.5px solid var(--separator-color);
+  padding-bottom: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.post-title a {
+  color: var(--old-ink);
+  text-decoration: none;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.post-excerpt {
+  max-width: 100%;
+  font-family: var(--secondary-font);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.post-tags {
+  max-width: 100%;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.tag {
+  background: var(--old-paper);
+  color: var(--old-ink);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-family: var(--primary-font);
+  font-weight: 500;
+  border: 1px solid var(--old-ink);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+  display: inline-block;
+}
+
+.tag:hover {
+  background: var(--old-ink);
+  color: var(--old-paper);
+}
+
+.post-footer {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  margin-top: auto;
+  border-top: 1.5px solid var(--separator-color);
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.post-stats {
+  display: flex;
+  gap: 15px;
+}
+
+.post-stats span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.post-category {
+  font-family: var(--primary-font);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  color: var(--gothic-accent);
+  font-weight: 700;
+}
+
+.read-more {
+  font-family: var(--primary-font);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  color: var(--gothic-accent);
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 2px solid var(--gothic-accent);
+  padding-bottom: 2px;
+  transition: opacity 0.3s ease;
+}
+
+.read-more:hover {
+  opacity: 0.8;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .post-card {
+    padding: 20px;
+  }
+
+  .post-stats {
+    gap: 15px;
+  }
+
+  .post-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-card {
+    padding: 15px;
+  }
+
+  .post-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Обновляем стили для контейнера постов */
+.posts-list {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Стилизация тегов */
+.post-tags .tag {
+  color: var(--gothic-accent);
+  border: 1px solid var(--gothic-accent);
+  background: transparent;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.post-tags .tag:hover {
+  background: var(--gothic-accent);
+  color: #fff;
+}
+
+/* Специфичные стили для иконок в карточке поста */
+.post-card .post-meta i,
+.post-card .post-stats i {
+  /* специфичные стили */
+}
+
+.author-link {
+  color: var(--gothic-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.author-link:hover {
+  color: var(--old-ink);
+  text-decoration: underline;
+} 

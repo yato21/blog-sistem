@@ -1,0 +1,248 @@
+/* Базовые стили */
+:root {
+  --container-padding: 20px;
+  --container-max-width: 1200px;
+  --btn-primary-bg: #4a0404;
+  --btn-primary-text: var(--old-paper);
+  --btn-min-width: 200px;
+  --btn-mobile-width: 300px;
+}
+
+.App {
+  min-height: 100vh;
+  background-color: var(--paper-color);
+  background-image: 
+    linear-gradient(
+      to bottom,
+      var(--paper-color),
+      rgba(252, 250, 247, 0.95)
+    );
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+  letter-spacing: 0.3px;
+  line-height: 1.6;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 40px var(--container-padding);
+  flex: 1;
+}
+
+main.container {
+  margin-top: 80px;
+  padding: 20px var(--container-padding);
+}
+
+/* Медиа-запросы для разных размеров экрана */
+@media (max-width: 1280px) {
+  :root {
+    --container-max-width: 960px;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --container-max-width: 768px;
+  }
+  
+  main.container {
+    padding: 30px var(--container-padding);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-max-width: 100%;
+    --container-padding: 15px;
+  }
+
+  main.container {
+    margin-top: 120px;
+    padding: 20px var(--container-padding);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 10px;
+  }
+
+  main.container {
+    padding: 15px var(--container-padding);
+  }
+}
+
+/* Базовые стили для форм */
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Базовые стили кнопок */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: var(--primary-font);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  line-height: 1.5;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  min-width: var(--btn-min-width);
+  min-height: 36px;
+}
+
+/* Основная кнопка */
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: 2px solid var(--btn-primary-bg);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--btn-primary-bg);
+}
+
+/* Вторичная кнопка */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--btn-primary-bg);
+  border: 2px solid var(--btn-primary-bg);
+}
+
+.btn-secondary:hover {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+}
+
+/* Эффект волны при нажатии */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Размеры кнопок */
+.btn-sm {
+  padding: 4px 12px;
+  font-size: 0.875rem;
+  min-height: 32px;
+}
+
+.btn-lg {
+  padding: 10px 20px;
+  font-size: 1rem;
+  min-height: 44px;
+}
+
+/* Полноразмерная кнопка */
+.btn-block {
+  width: 100%;
+  display: flex;
+}
+
+/* Группа кнопок */
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    min-width: 160px;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+  }
+  
+  .btn-block {
+    max-width: var(--btn-mobile-width);
+    margin: 0 auto;
+  }
+}
+
+/* Добавим общие стили для h2 */
+h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.author-link {
+  color: var(--gothic-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.author-link:hover {
+  color: var(--old-ink);
+  text-decoration: underline;
+}
